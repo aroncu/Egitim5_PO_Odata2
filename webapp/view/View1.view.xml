@@ -1,0 +1,73 @@
+<mvc:View controllerName="PO_Odata2.controller.View1" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<App id="idAppControl">
+		<pages>
+			<Page title="Satınalma Giriş Sayfası">
+				<content>
+					<VBox direction="Column" id="vbox0" justifyContent="Center" width="100%">
+						<items>
+							<!--<Label id="label3" text="Try out the Layout Editor and then click Run." textAlign="Center" width="100%"/>-->
+							<HBox alignItems="Center" class="sapUiSmallMargin">
+								<Label text=" Po Number" textAlign="Center" width="auto" class="sapUiTinyMarginBeginEnd"/>
+								<Input value="{viewModel>/PoNumber}" class="sapUiTinyMarginBeginEnd" width="auto"></Input>
+								
+								<Label text="Satıcı No" textAlign="Center" width="auto" class="sapUiTinyMarginBeginEnd"/>
+								<Input value="{viewModel>/Lifnr}" class="sapUiTinyMarginBeginEnd" width="auto"></Input>
+								
+								<Label text="Para Birimi" textAlign="Center" width="auto" class="sapUiTinyMarginBeginEnd"/>
+								<Input value="{viewModel>/Waers}" class="sapUiTinyMarginBeginEnd" width="auto"></Input>
+								
+								<Label text="Şirket Kodu" textAlign="Center" width="auto" class="sapUiTinyMarginBeginEnd"/>
+								<Input value="{viewModel>/Bukrs}" class="sapUiTinyMarginBeginEnd" width="auto"></Input>
+							</HBox>
+								<HBox alignItems="Center" class="sapUiSmallMargin"> 
+								<Button text= "Po Kaydet" press = "onAddPurchaseOrder" width = "200px"> </Button>
+								</HBox>
+						</items>
+					</VBox>
+	
+					<Table id= "table0" items = "{/PurchaseOrderSet}" noDataText="Maalesef hiç veri bulamadık!">
+						<headerToolbar>
+							<OverflowToolbar>
+								<content>
+									<Title text="Satınalmalar" level="H2"/>
+								</content>
+							</OverflowToolbar>
+						</headerToolbar>
+						<columns>
+							<Column id="column0">
+								<header>
+									<Label id="label0" text="Po Numarası"/>
+								</header>
+							</Column>
+							<Column id="column1">
+								<header>
+									<Label id="label1" text="Satıcı"/>
+								</header>
+							</Column>
+							<Column id="column2">
+								<header>
+									<Label id="label2" text="Para Birimi"/>
+								</header>
+							</Column>
+							<Column id="column3">
+								<header>
+									<Label id="label3" text="Şirket Kodu"/>
+								</header>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem counter="0" id="item1">
+								<cells>
+									<Text id="text5" maxLines="0" text="{Ponumber}"/>
+									<Text id="text6" maxLines="0" text="{Lifnr}"/>
+									<Text id="text7" maxLines="0" text="{Waers}"/>
+									<Text id="text8" maxLines="0" text="{Bukrs}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
